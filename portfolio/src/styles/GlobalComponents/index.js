@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
+import withReveal from 'react-reveal/withReveal'
 
-export const Section = styled.section`
+const oldSection = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex" };
   flex-direction: ${(props) => props.row ? "row" : "column" };
   padding: ${(props) => props.nopadding ? "0" : "32px 48px 0" } ;
@@ -23,6 +25,7 @@ export const Section = styled.section`
     flex-direction: column;
   }
 `
+export const Section = withReveal(oldSection, <Fade bottom delay={1000} duration={2000} forever={true}/>)
 
 export const SectionTitle = styled.h2`
   font-weight: 800;
